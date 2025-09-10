@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Try_Catch
 {
@@ -77,7 +78,16 @@ namespace Try_Catch
 
         private void btnregister_Click(object sender, EventArgs e)
         {
+            StudentInformation.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMIddleInitial.Text);
+            StudentInformation.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
+            StudentInformation.SetProgram = cbPrograms.Text;
+            StudentInformation.SetGender = cbGender.Text;
+            StudentInformation.SetContact = (int)ContactNo(txtContactNo.Text);
+            StudentInformation.SetAge = Age(txtAge.Text);
+            StudentInformation.SetBirthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
 
+            Form2 frm = new Form2();
+            frm.ShowDialog();
         }
 
 

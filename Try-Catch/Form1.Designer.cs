@@ -199,6 +199,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 25;
+            this.dateTimePicker1.Value = new System.DateTime(2025, 9, 10, 19, 58, 44, 0);
             // 
             // datePickerBirthday
             // 

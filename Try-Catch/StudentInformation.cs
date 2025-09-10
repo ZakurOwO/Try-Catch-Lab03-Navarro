@@ -11,6 +11,7 @@ namespace Try_Catch
 
         public static int SetStudentNo = 0;
         public static int SetContact = 0;
+        public static int SetAge = 0;
         public static string SetProgram = "";
         public static string SetGender = "";
         public static string SetBirthday = "";
