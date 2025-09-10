@@ -116,7 +116,7 @@
             // 
             this.lblStudentNo.AutoSize = true;
             this.lblStudentNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblStudentNo.Location = new System.Drawing.Point(175, 29);
+            this.lblStudentNo.Location = new System.Drawing.Point(125, 29);
             this.lblStudentNo.Name = "lblStudentNo";
             this.lblStudentNo.Size = new System.Drawing.Size(46, 18);
             this.lblStudentNo.TabIndex = 6;
@@ -126,7 +126,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblName.Location = new System.Drawing.Point(175, 69);
+            this.lblName.Location = new System.Drawing.Point(125, 69);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(46, 18);
             this.lblName.TabIndex = 7;
@@ -136,7 +136,7 @@
             // 
             this.lblProgram.AutoSize = true;
             this.lblProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblProgram.Location = new System.Drawing.Point(175, 114);
+            this.lblProgram.Location = new System.Drawing.Point(125, 114);
             this.lblProgram.Name = "lblProgram";
             this.lblProgram.Size = new System.Drawing.Size(46, 18);
             this.lblProgram.TabIndex = 8;
@@ -146,7 +146,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblAge.Location = new System.Drawing.Point(175, 162);
+            this.lblAge.Location = new System.Drawing.Point(125, 162);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(46, 18);
             this.lblAge.TabIndex = 9;
@@ -156,7 +156,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblGender.Location = new System.Drawing.Point(175, 203);
+            this.lblGender.Location = new System.Drawing.Point(125, 203);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(46, 18);
             this.lblGender.TabIndex = 10;
@@ -166,7 +166,7 @@
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblContactNo.Location = new System.Drawing.Point(175, 247);
+            this.lblContactNo.Location = new System.Drawing.Point(125, 247);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(46, 18);
             this.lblContactNo.TabIndex = 11;
@@ -196,7 +196,7 @@
             // 
             this.lblBirthday.AutoSize = true;
             this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblBirthday.Location = new System.Drawing.Point(175, 289);
+            this.lblBirthday.Location = new System.Drawing.Point(125, 289);
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.Size = new System.Drawing.Size(46, 18);
             this.lblBirthday.TabIndex = 14;
@@ -206,7 +206,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 407);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(318, 407);
             this.Controls.Add(this.lblBirthday);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnSubmit);

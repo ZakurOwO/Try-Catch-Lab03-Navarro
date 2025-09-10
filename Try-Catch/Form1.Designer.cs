@@ -75,6 +75,7 @@
             this.txtStudentNo.Name = "txtStudentNo";
             this.txtStudentNo.Size = new System.Drawing.Size(100, 20);
             this.txtStudentNo.TabIndex = 9;
+            this.txtStudentNo.TextChanged += new System.EventHandler(this.txtStudentNo_TextChanged);
             // 
             // label2
             // 
@@ -91,6 +92,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 13;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // label3
             // 
@@ -116,6 +118,7 @@
             this.txtMIddleInitial.Name = "txtMIddleInitial";
             this.txtMIddleInitial.Size = new System.Drawing.Size(100, 20);
             this.txtMIddleInitial.TabIndex = 17;
+            this.txtMIddleInitial.TextChanged += new System.EventHandler(this.txtMIddleInitial_TextChanged);
             // 
             // label5
             // 
@@ -128,15 +131,16 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(206, 153);
+            this.txtAge.Location = new System.Drawing.Point(206, 143);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(100, 20);
             this.txtAge.TabIndex = 19;
+            this.txtAge.TextChanged += new System.EventHandler(this.txtAge_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 137);
+            this.label6.Location = new System.Drawing.Point(203, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 18;
@@ -148,6 +152,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 11;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // txtContactNo
             // 
@@ -155,6 +160,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(100, 20);
             this.txtContactNo.TabIndex = 21;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.txtContactNo_TextChanged);
             // 
             // label7
             // 
@@ -172,10 +178,15 @@
             this.cbPrograms.Name = "cbPrograms";
             this.cbPrograms.Size = new System.Drawing.Size(121, 21);
             this.cbPrograms.TabIndex = 22;
+            this.cbPrograms.SelectedIndexChanged += new System.EventHandler(this.cbPrograms_SelectedIndexChanged);
             // 
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "N/A"});
             this.cbGender.Location = new System.Drawing.Point(206, 239);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(121, 21);
@@ -200,6 +211,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 25;
             this.dateTimePicker1.Value = new System.DateTime(2025, 9, 10, 19, 58, 44, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // datePickerBirthday
             // 
@@ -224,6 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(444, 396);
             this.Controls.Add(this.btnregister);
             this.Controls.Add(this.datePickerBirthday);

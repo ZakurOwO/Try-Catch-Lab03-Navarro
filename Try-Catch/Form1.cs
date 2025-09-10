@@ -78,17 +78,40 @@ namespace Try_Catch
 
         private void btnregister_Click(object sender, EventArgs e)
         {
-            StudentInformation.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMIddleInitial.Text);
-            StudentInformation.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
-            StudentInformation.SetProgram = cbPrograms.Text;
-            StudentInformation.SetGender = cbGender.Text;
-            StudentInformation.SetContact = (int)ContactNo(txtContactNo.Text);
-            StudentInformation.SetAge = Age(txtAge.Text);
-            StudentInformation.SetBirthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
 
-            Form2 frm = new Form2();
-            frm.ShowDialog();
+            try
+            {
+                StudentInformation.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMIddleInitial.Text);
+                StudentInformation.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
+                StudentInformation.SetProgram = cbPrograms.Text;
+                StudentInformation.SetGender = cbGender.Text;
+                StudentInformation.SetContact = (int)ContactNo(txtContactNo.Text);
+                StudentInformation.SetAge = Age(txtAge.Text);
+                StudentInformation.SetBirthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+                Form2 frm = new Form2();
+                frm.ShowDialog();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Format Error: " + ex.Message);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Null Error: " + ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show("Overflow Error: " + ex.Message);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show("Index Error: " + ex.Message);
+            }
         }
+           
+        
+        
 
 
 
@@ -110,6 +133,46 @@ namespace Try_Catch
             {
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
             }
+
+        }
+
+        private void txtStudentNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPrograms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMIddleInitial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
