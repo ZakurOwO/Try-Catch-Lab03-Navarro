@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace Try_Catch
 {
@@ -18,6 +19,69 @@ namespace Try_Catch
         {
             InitializeComponent();
         }
+
+        public class DatabaseHelper
+        {
+            private readonly string connectionString =
+                "Server=localhost;Database=StudentDB;Trusted_Connection=True;";
+         
+
+            public SqlConnection GetConnection()
+            {
+                return new SqlConnection(connectionString);
+            }
+        }
+
+        public class StudentRepository
+        {
+            private DatabaseHelper db = new DatabaseHelper();
+
+            public void AddStudent(long studentNo, string fullName, string program, string gender,
+                                   long contactNo, int age, DateTime birthday)
+            {
+                using (SqlConnection conn = db.GetConnection())
+                {
+                    string query = "INSERT INTO StudentInformation " +
+                                   "(StudentNo, FullName, Program, Gender, ContactNo, Age, Birthday) " +
+                                   "VALUES (@StudentNo, @FullName, @Program, @Gender, @ContactNo, @Age, @Birthday)";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@StudentNo", studentNo);
+                    cmd.Parameters.AddWithValue("@FullName", fullName);
+                    cmd.Parameters.AddWithValue("@Program", program);
+                    cmd.Parameters.AddWithValue("@Gender", gender);
+                    cmd.Parameters.AddWithValue("@ContactNo", contactNo);
+                    cmd.Parameters.AddWithValue("@Age", age);
+                    cmd.Parameters.AddWithValue("@Birthday", birthday);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public DataTable GetAllStudents()
+            {
+                DataTable dt = new DataTable();
+
+                using (SqlConnection conn = db.GetConnection())
+                {
+                    string query = "SELECT * FROM StudentInformation";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+                }
+
+                return dt;
+            }
+        }
+
+
+
+
+
+
+
 
         /////return methods 
         public long StudentNumber(string studNum)
@@ -78,7 +142,6 @@ namespace Try_Catch
 
         private void btnregister_Click(object sender, EventArgs e)
         {
-
             try
             {
                 StudentInformation.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMIddleInitial.Text);
@@ -89,29 +152,27 @@ namespace Try_Catch
                 StudentInformation.SetAge = Age(txtAge.Text);
                 StudentInformation.SetBirthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
 
-                Form2 frm = new Form2();
-                frm.ShowDialog();
+                
+                Form2 frm2 = new Form2();
+                frm2.ShowDialog();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("SQL Error: " + ex.Message);
             }
             catch (FormatException ex)
             {
                 MessageBox.Show("Format Error: " + ex.Message);
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Null Error: " + ex.Message);
-            }
-            catch (OverflowException ex)
-            {
-                MessageBox.Show("Overflow Error: " + ex.Message);
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                MessageBox.Show("Index Error: " + ex.Message);
+                MessageBox.Show("Unexpected Error: " + ex.Message);
             }
         }
-           
-        
-        
+
+
+
 
 
 
