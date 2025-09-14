@@ -15,7 +15,7 @@ namespace Try_Catch
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // Show student details for confirmation
+         
             lblStudentNo.Text = StudentInformation.SetStudentNo.ToString();
             lblName.Text = StudentInformation.SetFullName;
             lblProgram.Text = StudentInformation.SetProgram;
@@ -42,7 +42,7 @@ namespace Try_Catch
 
                 MessageBox.Show("Student registered successfully!");
 
-                // Open Form3 (DataGridView with all students)
+               
                 Form3 frm3 = new Form3();
                 frm3.ShowDialog();
 
